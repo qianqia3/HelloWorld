@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Install Python') {
             steps {
-                sh 'apt-get update && apt-get install -y python3' // 确保 Python 3 被安装
+                sh 'sudo apt-get update && sudo apt-get install -y python3' // 确保 Python 3 被安装
             }
         }
         stage('Build') {
