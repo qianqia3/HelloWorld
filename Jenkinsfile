@@ -33,10 +33,10 @@ pipeline {
                 withSonarQubeEnv('SonarQube-first-instance') { // 替换为你在 Jenkins 中配置的 SonarQube 实例名
                     sh """
                     ${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner 
-                      -Dsonar.projectKey=first-hello-world 
+                      -Dsonar.projectKey=first-hello-world
                       -Dsonar.sources=.
                       -Dsonar.host.url=http://35.197.25.242/:9000 
-                      -Dsonar.login=sqa_8625397ea241471b8a2b22ce6993df3a979d2aff 
+                      -Dsonar.login=sqp_7e365cbcaa5df920d6badd46554e2f21de5811fd
                     """
                 }
             }
