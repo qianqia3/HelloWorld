@@ -38,11 +38,11 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube-first-instance') {
                     sh """
-                    ${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner 
-                      -Dsonar.projectKey=first-hello-world
-                      -Dsonar.sources=.
-                      -Dsonar.host.url=http://35.197.25.242/:9000 
-                      -Dsonar.login=sqp_7e365cbcaa5df920d6badd46554e2f21de5811fd
+                    ${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
+                      -Dsonar.projectKey=first-hello-world \
+                      -Dsonar.sources=. \
+                      -Dsonar.host.url=http://35.197.25.242/:9000 \ 
+                      -Dsonar.login=sqp_7e365cbcaa5df920d6badd46554e2f21de5811fd \
                     """
                 }
             }
