@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'laauuurrrraaaaa/first-instance' // 这里是你构建和推送的自定义镜像
+            label 'docker-agent'
+            args '-u root' // 如果需要 root 权限
+        }
+    }
 
     stages {
         stage('Checkout') {
