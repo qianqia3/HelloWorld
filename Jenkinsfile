@@ -32,11 +32,11 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube-first-instance') { // 替换为你在 Jenkins 中配置的 SonarQube 实例名
                     sh """
-                    ${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
-                      -Dsonar.projectKey=first-hello-world \  // 替换为你的项目key
-                      -Dsonar.sources=. \  // 扫描当前目录中的源文件
-                      -Dsonar.host.url=http://35.197.25.242/:9000 \  // 替换为SonarQube的URL
-                      -Dsonar.login=sqa_8625397ea241471b8a2b22ce6993df3a979d2aff  // 替换为SonarQube的访问token
+                    ${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner 
+                      -Dsonar.projectKey=first-hello-world 
+                      -Dsonar.sources=.
+                      -Dsonar.host.url=http://35.197.25.242/:9000 
+                      -Dsonar.login=sqa_8625397ea241471b8a2b22ce6993df3a979d2aff 
                     """
                 }
             }
