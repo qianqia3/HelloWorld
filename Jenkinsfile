@@ -34,19 +34,19 @@ pipeline {
             }
         }
 
-        // stage('SonarQube analysis') {
-        //     steps {
-        //         withSonarQubeEnv('SonarQube-first-instance') { // 替换为你在 Jenkins 中配置的 SonarQube 实例名
-        //             sh """
-        //             ${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner 
-        //               -Dsonar.projectKey=first-hello-world
-        //               -Dsonar.sources=.
-        //               -Dsonar.host.url=http://35.197.25.242/:9000 
-        //               -Dsonar.login=sqp_7e365cbcaa5df920d6badd46554e2f21de5811fd
-        //             """
-        //         }
-        //     }
-        // }
+        stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube-first-instance') {
+                    sh """
+                    ${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner 
+                      -Dsonar.projectKey=first-hello-world
+                      -Dsonar.sources=.
+                      -Dsonar.host.url=http://35.197.25.242/:9000 
+                      -Dsonar.login=sqp_7e365cbcaa5df920d6badd46554e2f21de5811fd
+                    """
+                }
+            }
+        }
 
         // stage('Quality Gate') {
         //     steps {
