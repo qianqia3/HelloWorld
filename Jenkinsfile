@@ -53,7 +53,9 @@ pipeline {
 
     post {
         always {
-            cleanWs() // 清理工作区
+            node {
+                cleanWs() // 清理工作区
+            }
         }
     }
 }
