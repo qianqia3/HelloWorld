@@ -7,6 +7,11 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/qianqia3/HelloWorld.git'
             }
         }
+        stage('Install Python') {
+            steps {
+                sh 'apt-get update && apt-get install -y python3' // 确保 Python 3 被安装
+            }
+        }
         stage('Build') {
             steps {
                 sh 'python3 hello_world.py' // 假设你有一个简单的Python脚本
